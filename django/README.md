@@ -1,6 +1,6 @@
 # DjangoNote
 
-# 1. Setup Django project
+# 1. Setup Django Project
 
 # check Django version
 
@@ -24,7 +24,9 @@
 
 `python manage.py runserver 0:8000`
 
-# create your app
+# 2. Create and Install APP
+
+# create app
 
 `python manage.py startapp polls`
 
@@ -32,7 +34,22 @@
 
 An app is a web application that does something – e.g., a blog system, a database of public records or a small poll app. A project is a collection of configuration and apps for a particular website. A project can contain multiple apps. An app can be in multiple projects.
 
-# 2. View
+# install app
+
+mysite/settings.py
+```
+INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+]
+```
+
+# 3. Create View
 
 # write your first view
 
@@ -67,7 +84,7 @@ urlpatterns = [
 ]
 ```
 
-# 3. Datebase
+# 3. Setup Datebase
 
 # create the tables in the database
 
@@ -91,21 +108,6 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
-```
-
-# install app
-
-mysite/settings.py
-```
-INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
 ```
 
 # after update models.py
