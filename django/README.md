@@ -10,6 +10,8 @@
 
 `django-admin startproject mysite`
 
+`python -m django startproject mysite`
+
 # start the Django development server
 
 `python manage.py runserver`
